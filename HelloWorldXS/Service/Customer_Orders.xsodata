@@ -1,0 +1,8 @@
+service {       
+	"hand.com.HelloWorldXS.Data::Customer" as "Customers"
+	      navigates ("Customer_Orders" as "HisOrders");
+	"hand.com.HelloWorldXS.Data::Order" as "Orders"; 
+	association "Customer_Orders"
+	   principal "Customers"("CUSTOMERID") multiplicity "1" 
+   	   dependent "Orders"("CUSTOMERID") multiplicity "*";
+}

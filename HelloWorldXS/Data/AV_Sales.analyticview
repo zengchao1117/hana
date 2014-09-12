@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Cube:cube xmlns:Cube="http://www.sap.com/ndb/BiModelCube.ecore" schemaVersion="1.5" id="AV_Sales" applyPrivilegeType="ANALYTIC_PRIVILEGE" checkAnalyticPrivileges="true" defaultClient="$$client$$" defaultLanguage="$$language$$" visibility="reportingEnabled">
+  <descriptions defaultDescription="AV_Sales"/>
+  <defaultSchema schemaName="HANDDEV"/>
+  <localVariables/>
+  <privateMeasureGroup id="MeasureGroup">
+    <attributes>
+      <attribute id="ORDERID" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ORDERID"/>
+        <keyMapping schemaName="HANDDEV" columnObjectName="hand.com.HelloWorldXS.Data::Sales" columnName="ORDERID"/>
+      </attribute>
+      <attribute id="COUNTRY_1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="COUNTRY_1"/>
+        <keyMapping schemaName="HANDDEV" columnObjectName="hand.com.HelloWorldXS.Data::Sales" columnName="COUNTRY"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies>
+        <tableProxy centralTable="true">
+          <table schemaName="HANDDEV" columnObjectName="hand.com.HelloWorldXS.Data::Sales"/>
+        </tableProxy>
+      </tableProxies>
+      <joins/>
+      <layout>
+        <shapes>
+          <shape modelObjectName="hand.com.HelloWorldXS.Data::Sales" modelObjectNameSpace="HANDDEV" modelObjectType="catalog">
+            <upperLeftCorner x="70" y="30"/>
+          </shape>
+        </shapes>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="PRICE" hidden="true" order="2" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="PRICE"/>
+        <measureMapping schemaName="HANDDEV" columnObjectName="hand.com.HelloWorldXS.Data::Sales" columnName="PRICE"/>
+      </measure>
+      <measure id="SALECOUNT" hidden="true" order="3" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="SALECOUNT"/>
+        <measureMapping schemaName="HANDDEV" columnObjectName="hand.com.HelloWorldXS.Data::Sales" columnName="SALECOUNT"/>
+      </measure>
+      <measure id="COST" order="4" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="COST"/>
+        <measureMapping schemaName="HANDDEV" columnObjectName="hand.com.HelloWorldXS.Data::Sales" columnName="COST"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures>
+      <measure id="PROFIT" hidden="false" order="5" aggregationType="sum" measureType="simple" calculateBeforeAggregation="true" datatype="DECIMAL" length="15" scale="2">
+        <descriptions defaultDescription="PROFIT"/>
+        <formula>( &quot;PRICE&quot; * &quot;SALECOUNT&quot;) - &quot;COST&quot;</formula>
+      </measure>
+      <measure id="REVENUE" hidden="false" order="6" aggregationType="sum" measureType="simple" calculateBeforeAggregation="true" datatype="DECIMAL" length="15" scale="2">
+        <descriptions defaultDescription=""/>
+        <formula>&quot;PRICE&quot;  * &quot;SALECOUNT&quot;</formula>
+      </measure>
+    </calculatedMeasures>
+    <restrictedMeasures/>
+    <sharedDimensions>
+      <logicalJoin associatedObjectUri="/hand.com.HelloWorldXS.Data/attributeviews/MstCountry">
+        <attributes>
+          <attributeRef>#COUNTRY_1</attributeRef>
+        </attributes>
+        <associatedAttributeNames>
+          <attributeName>COUNTRY</attributeName>
+        </associatedAttributeNames>
+        <properties joinOperator="Equal" joinType="referential"/>
+        <associatedAttributeFeatures/>
+      </logicalJoin>
+    </sharedDimensions>
+    <layout>
+      <shapes>
+        <shape modelObjectName="MEASURE_GROUP" modelObjectType="repository">
+          <upperLeftCorner x="32" y="110"/>
+        </shape>
+        <shape modelObjectName="/hand.com.HelloWorldXS.Data/attributeviews/MstCountry" modelObjectType="repository">
+          <upperLeftCorner x="339" y="106"/>
+        </shape>
+        <shape modelObjectName="LogicalView" modelObjectNameSpace="MeasureGroup" modelObjectType="repository">
+          <upperLeftCorner x="40" y="85"/>
+          <rectangleSize height="0" width="0"/>
+        </shape>
+      </shapes>
+    </layout>
+  </privateMeasureGroup>
+</Cube:cube>

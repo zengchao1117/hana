@@ -1,0 +1,24 @@
+namespace hand.com.HelloWorldXS.Data;
+@Schema: 'HANDDEV'
+context HANDData {
+type BusinessKey : String(10);// Type define
+type Addresses {
+  CITY: String(40);
+  COUNTRY: String(3);
+      REGION: String(4);
+};
+    @Catalog.tableType: #COLUMN// Table(Entity ) define
+entity User{
+     key PERS_NO: BusinessKey;
+     FIRSTNAME: String(40);
+     LASTNAME: String(40);
+     EMAIL: String(60);
+     ADRC : Addresses;
+}; 
+view UserView as select from User{ // View define
+PERS_NO,
+FIRSTNAME,
+LASTNAME,
+EMAIL
+};
+};

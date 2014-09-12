@@ -1,0 +1,4 @@
+service { 
+      "hand.com.HelloWorldXS.Data::HANDData.User" as "RepoUser" 
+           with ("PERS_NO","FIRSTNAME","LASTNAME","EMAIL");
+}

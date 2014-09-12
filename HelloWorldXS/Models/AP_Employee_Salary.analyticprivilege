@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Privilege:analyticPrivilege xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Privilege="http://www.sap.com/ndb/BiModelPrivilege.ecore" schemaVersion="1.1" id="AP_Employee_Salary">
+  <descriptions defaultDescription="AP_Employee_Salary"/>
+  <securedModels allInformationModels="false">
+    <modelUri>/hand.com.HelloWorldXS.Data/analyticviews/Employee_Salary</modelUri>
+  </securedModels>
+  <restriction logicalOperator="AND">
+    <filter xsi:type="Privilege:AttributeFilter" attributeName="COUNTRY">
+      <procedureFilter operator="IN" procedureName="&quot;HANDDEV&quot;.hand.com.HelloWorldXS.Procedure::GetCountryByUser"/>
+    </filter>
+    <attributeName>COUNTRY</attributeName>
+    <originInformationModelUri>/hand.com.HelloWorldXS.Data/analyticviews/Employee_Salary</originInformationModelUri>
+  </restriction>
+</Privilege:analyticPrivilege>

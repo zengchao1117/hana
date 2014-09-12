@@ -1,0 +1,7 @@
+table.schemaName = "HANDDEV";
+table.tableType = COLUMNSTORE; 
+table.columns = [ 
+    {name = "USERNAME"; sqlType= VARCHAR; length = 20 ; nullable = false;},  
+    {name = "COUNTRY"; sqlType= VARCHAR; length = 2 ; nullable = true;} 
+    ];
+table.primaryKey.pkcolumns = ["USERNAME","COUNTRY"];

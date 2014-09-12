@@ -1,0 +1,10 @@
+table.schemaName = "HANDDEV";
+table.tableType = COLUMNSTORE; 
+table.columns = [ 
+    {name = "ORDERID"; sqlType= VARCHAR; length = 4 ; nullable = false;},  
+    {name = "COUNTRY"; sqlType= VARCHAR; length = 2 ; nullable = true;}, 
+    {name = "PRICE"; sqlType= DECIMAL; precision = 10;scale = 2; nullable = true;},
+    {name = "SALECOUNT";  sqlType = INTEGER; nullable = true;}, 
+    {name = "COST"; sqlType= DECIMAL; precision = 15;scale = 2; nullable = true;}
+    ];
+table.primaryKey.pkcolumns = ["ORDERID"];

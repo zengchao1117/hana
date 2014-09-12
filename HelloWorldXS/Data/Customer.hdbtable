@@ -1,0 +1,8 @@
+table.schemaName = "HANDDEV";
+table.tableType = COLUMNSTORE; 
+table.columns = [ 
+    {name = "CUSTOMERID"; sqlType = INTEGER; nullable = false;},  
+    {name = "RECRUITID"; sqlType = INTEGER; nullable = true;},
+    {name = "NAME"; sqlType= VARCHAR; length = 30 ; nullable = true;} 
+    ];
+table.primaryKey.pkcolumns = ["CUSTOMERID"];

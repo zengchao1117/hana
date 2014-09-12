@@ -1,0 +1,4 @@
+service { 
+      "hand.com.HelloWorldXS.Data::HANDData.User" as "RepoUser" 
+           without ( "ADRC.CITY","ADRC.COUNTRY","ADRC.REGION");
+}

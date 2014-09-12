@@ -1,0 +1,6 @@
+service {
+	"hand.com.HelloWorldXS.Data::AV_Sales" as "SalesByCountry"
+	    with ("NAME","COST","PROFIT","REVENUE")
+	    keys generate local "ID"
+	    aggregates always(SUM of "COST", SUM of "PROFIT" ,SUM of "REVENUE");	 
+}

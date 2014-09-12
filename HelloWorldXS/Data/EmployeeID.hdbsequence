@@ -1,0 +1,8 @@
+schema= "HANDDEV";
+start_with= 1050;
+maxvalue= 1999;
+nomaxvalue=false;
+minvalue= 1;
+nominvalue=true;
+cycles= false;
+depends_on_table= "hand.com.HelloWorldXS.Data::Employee";

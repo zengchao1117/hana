@@ -1,0 +1,7 @@
+table.schemaName = "HANDDEV";
+table.tableType = COLUMNSTORE; 
+table.columns = [ 
+    {name = "STUDENTID"; sqlType = INTEGER; nullable = false;},  
+    {name = "NAME"; sqlType= VARCHAR; length = 30 ; nullable = true;} 
+    ];
+table.primaryKey.pkcolumns = ["STUDENTID"];

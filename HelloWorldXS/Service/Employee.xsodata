@@ -1,0 +1,4 @@
+service namespace "hand.com.HelloWorldXS.Service" {
+   "hand.com.HelloWorldXS.Data::Employee" as "Employees" 
+      create using "hand.com.HelloWorldXS.Procedure::CreateEmployee";
+}

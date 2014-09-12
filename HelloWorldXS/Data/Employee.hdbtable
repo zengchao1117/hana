@@ -1,0 +1,12 @@
+table.schemaName = "HANDDEV";
+table.tableType = COLUMNSTORE; 
+table.columns = [ 
+    {name = "EMPLOYEEID"; sqlType = INTEGER; nullable = false;},  
+    {name = "FIRSTNAME"; sqlType= VARCHAR; length = 30 ; nullable = true;}, 
+    {name = "LASTNAME"; sqlType= VARCHAR; length = 30 ; nullable = true;},
+    {name = "EMAIL"; sqlType= VARCHAR; length = 60 ; nullable = true;}, 
+    {name = "PHONENUMBER"; sqlType= VARCHAR; length = 11 ; nullable = true;}, 
+    {name = "COUNTRY"; sqlType= VARCHAR; length = 2 ; nullable = true;},
+    {name = "SALARY"; sqlType= DECIMAL; precision = 15;scale = 2;  nullable = true;}
+    ];
+table.primaryKey.pkcolumns = ["EMPLOYEEID"];

@@ -1,0 +1,13 @@
+PROCEDURE "HANDDEV"."hand.com.HelloWorldXS.Procedure::GetCountryByUser" (
+OUT Countrys "hand.com.HelloWorldXS.Data::Country" ) 
+	LANGUAGE SQLSCRIPT
+	SQL SECURITY INVOKER 
+	--DEFAULT SCHEMA <default_schema_name>
+	READS SQL DATA AS
+BEGIN
+/***************************** 
+	Write your procedure logic 
+ *****************************/
+  Countrys = select COUNTRY from "HANDDEV"."hand.com.HelloWorldXS.Data::User_Country" where 
+    USERNAME = SESSION_USER;
+END;

@@ -1,0 +1,4 @@
+table.schemaName = "HANDDEV";
+table.columns = [ 
+	{name = "COUNTRY"; sqlType = VARCHAR;length=2;}
+];

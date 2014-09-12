@@ -1,0 +1,12 @@
+import = [ 
+            {
+                hdbtable = "hand.com.HelloWorldXS.Data::Sales";
+                file = "hand.com.HelloWorldXS.Data.Load:Sales.csv";
+                header = true;
+            } ,
+            {
+                hdbtable = "hand.com.HelloWorldXS.Data::MasterCountry";
+                file = "hand.com.HelloWorldXS.Data.Load:Country.csv";
+                header = true;
+            }                      
+         ];

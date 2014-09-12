@@ -1,0 +1,9 @@
+{ 
+"description": "Read stock value",     
+"action": "yahoo:yahoo.xsjs::readStock",
+ "schedules": [ { 
+"description": "Read current stock value",      
+"xscron": "* * * * * * 59",                     
+"parameter": { "stock": "SAP.DE" }              
+ } ]
+} 

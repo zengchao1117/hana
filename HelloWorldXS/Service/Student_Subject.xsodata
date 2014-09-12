@@ -1,0 +1,10 @@
+service {       
+	"hand.com.HelloWorldXS.Data::Student" as "Students";
+	"hand.com.HelloWorldXS.Data::Subject" as "Subjects"; 
+	association "Student_Subject"
+	      principal "Students"("STUDENTID") multiplicity "*" 
+   	      dependent "Subjects"("SUBJECTID") multiplicity "*"
+   	over "hand.com.HelloWorldXS.Data::Student_Subject" 
+   	         principal ("STUDENTID")
+   	         dependent ("SUBJECTID");
+}

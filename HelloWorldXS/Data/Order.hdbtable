@@ -1,0 +1,8 @@
+table.schemaName = "HANDDEV";
+table.tableType = COLUMNSTORE; 
+table.columns = [ 
+    {name = "ORDERID"; sqlType = INTEGER; nullable = false;},  
+    {name = "CUSTOMERID"; sqlType = INTEGER; nullable = false;},
+    {name = "AMOUNT" ;sqlType= INTEGER; nullable = false;}
+    ];
+table.primaryKey.pkcolumns = ["ORDERID"];

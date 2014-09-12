@@ -1,0 +1,7 @@
+import = [ 
+            {
+                hdbtable = "hand.com.HelloWorldXS.Data::Employee";
+                file = "hand.com.HelloWorldXS.Data.Load:EmployeeData.csv";
+                header = true;
+            }                       
+         ];

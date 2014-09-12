@@ -1,0 +1,3 @@
+service { 
+      "hand.com.HelloWorldXS.Data::HANDData.User" as "RepoUser";
+}
